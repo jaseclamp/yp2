@@ -115,7 +115,7 @@ if($recaptchaB=false)
 
 function getListings($url,$context){
     
-    $r = rand ( 5, 10); 
+    $r = rand ( 10, 20); 
     echo "\n Pausing ".$r." seconds";
     sleep ( $r ); //throttle! 
 
