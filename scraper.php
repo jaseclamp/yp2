@@ -249,6 +249,16 @@ for($i=3000;$i<=9999;$i++)
     
     echo "\nGETTING ZIP CODE: ".$i." (".$url.")";
     
+    //have we already processed this link? even recursive safe because parent done last. 
+    $result = R::findOne( 'urls', ' url = ? ', array( $url ) );
+    //if the result is not null that means its already in the db so continue on to the next one in this loop
+    if(!is_null($result)) { echo " -- Already done"; continue; }
+    unset($result);
+
+    $urls = R::dispense('urls');
+    $urls->url = $url;
+    R::store($urls);
+
     getListings($url,$context);
     
 } //end for loop
