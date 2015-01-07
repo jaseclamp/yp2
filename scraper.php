@@ -221,7 +221,7 @@ function getListings($url,$context){
     {
         //for some reason the urls on the pagination get screwed up so we have to manually build the url from original
         $nextPageNum = $dom->find('div[class=button-pagination-container]',0)->find('div[class=circle-glyph]',0)->next_sibling()->plaintext; 
-        $_url = preg_replace("/(^.*)pageNumber=\d(.*$)/","\1pageNumber=".$nextPageNum."\2",$url);
+        $_url = preg_replace("/(^.*)pageNumber=\d(.*$)/","$1pageNumber=".$nextPageNum."$2",$url);
         echo "\nGetting page number: " . $nextPageNum . " (". $_url. ")";
         die;
         $dom->clear();
