@@ -231,7 +231,7 @@ function getListings($url,$context){
 
         $dom->clear();
         unset($dom);
-        getListings( $baseurl . $_url  , $context );
+        getListings( $_url  , $context );
     }
     else
     {
