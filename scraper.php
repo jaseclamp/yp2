@@ -119,10 +119,10 @@ function getListings($url,$context){
     echo "\n Pausing ".$r." seconds";
     sleep ( $r ); //throttle! 
 
-    if( ! $html = @file_get_contents($url,null,$context) ) { 
+    if( ! $html = file_get_contents($url,null,$context) ) { 
     	echo " -- problem getting page"; 
     	var_dump(get_defined_vars()); 
-    	var_dump($http_response_header);
+    	
     	die; 
     }
     
