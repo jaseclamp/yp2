@@ -6,7 +6,7 @@
 require 'rb.php';
 require 'simple_html_dom.php';  
 
-R::setup('sqlite:scraperwiki.sqlite');
+R::setup('sqlite:data.sqlite');
 
 //should we wipe everything? 
 if($wipe = false)
