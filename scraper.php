@@ -166,7 +166,7 @@ function getListings($url,$context){
     $dashes['data-state'] = 'data-state';
             
     foreach( $dom->find('div[class=search-results]',0)->find('div[class=middle-cell]') as $e )
-    {
+    { 
         
         if(!$e->find('a[class=listing-name]',0)) continue; 
         
@@ -176,7 +176,7 @@ function getListings($url,$context){
 
             $databusinessid = $e->find('div[class=listing-data]',0)->$dashes['data-business-id']; //or should we use data-listing-id as the unique??? 
             
-            //have we already processed this link? even recursive safe because parent done last. 
+            //have we already processed this
             $result = R::findOne( 'listings', ' databusinessid = ? ', array( $databusinessid ) );
             //if the result is not null that means its already in the db so continue on to the next one in this loop
             if(!is_null($result)) { echo " -- Already done"; continue; }
@@ -249,7 +249,7 @@ for($i=3000;$i<=9999;$i++)
     
     echo "\nGETTING ZIP CODE: ".$i." (".$url.")";
     
-    //have we already processed this link? even recursive safe because parent done last. 
+    //have we already processed this link? 
     $result = R::findOne( 'urls', ' url = ? ', array( $url ) );
     //if the result is not null that means its already in the db so continue on to the next one in this loop
     if(!is_null($result)) { echo " -- Already done"; continue; }
@@ -259,7 +259,7 @@ for($i=3000;$i<=9999;$i++)
     $urls->url = $url;
     R::store($urls);
 
-    getListings($url,$context);
+    getListings($url,$context); //go!
     
 } //end for loop
 
