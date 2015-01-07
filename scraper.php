@@ -259,7 +259,7 @@ for($i=0;$i<=9999;$i++)
     $urls->url = $url;
     R::store($urls);
 
-    getListings($url,$context); //go!!!
+    getListings($url,$context); //go!!!!
     
 } //end for loop
 
