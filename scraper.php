@@ -240,7 +240,7 @@ function getListings($url,$context){
     }
 }
 
-for($i=3000;$i<=9999;$i++)
+for($i=0;$i<=9999;$i++)
 {
     
     if(!validZip($i)) continue; 
@@ -259,7 +259,7 @@ for($i=3000;$i<=9999;$i++)
     $urls->url = $url;
     R::store($urls);
 
-    getListings($url,$context); //go!
+    getListings($url,$context); //go!!!
     
 } //end for loop
 
