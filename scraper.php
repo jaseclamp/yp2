@@ -142,7 +142,7 @@ function getListings($url,$context){
         die;
         
     }
-    echo "\n".preg_replace( "/\r|\n/", "", $html );
+    //echo "\n".preg_replace( "/\r|\n/", "", $html );
     
     $dom = new simple_html_dom();
     //$dom->load(gzdecode($html));
